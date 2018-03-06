@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+        }
+        
+        .container {
+            height: 100vh;
+            background: gray;
+            position: relative;
+            margin: 0 auto 0;
+            color: #fff;
+            font-size: 38px;
+        }
+
+        /* 两边留白，主要适配PC端 */
+        @media (min-aspect-ratio: 640/1040) {
+            .container {
+                width: calc((640/1040)*100vh);
+            }
+        }
+
+        /* 两边不留白，可视区域拉长，主要适配Wap端 */
+        @media (max-aspect-ratio: 640/1040) {
+            .container {
+                width: 100vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>移动端适配PC端</center>
+        <center>640/1040</center>
+        <center>自动宽高比</center>
+    </div>
+</body>
+</html>
