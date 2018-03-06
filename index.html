@@ -24,14 +24,14 @@
         }
 
         /* 两边留白，主要适配PC端 */
-        @media (min-aspect-ratio:  618/1000) {
+        @media (min-aspect-ratio:  1000/1000) {
             .container {
                 width: 100vh;
             }
         }
 
         /* 两边不留白，可视区域拉长，主要适配Wap端 */
-        @media (max-aspect-ratio: 618/1000) {
+        @media (max-aspect-ratio: 1000/1000) {
             .container {
                 width: 100vw;
             }
@@ -41,7 +41,7 @@
 <body>
     <div class="container">
         <center>移动端适配PC端</center>
-        <center>618/1000（黄金比例）</center>
+        <center>1:1分隔</center>
         <center>自动宽高比</center>
     </div>
 </body>
