@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="orientation" content="portrait">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    
+    <title>Document</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+        }
+        
+        #container {
+            height: 1040px;
+            width: 640px;
+            background: gray;
+            position: relative;
+            margin: 0 auto 0;
+            color: #fff;
+            font-size: 38px;
+        }   
+    </style>
+
+    <script>
+        var _WidthBase = 640;
+        var _HeightBase = 1040;
+
+        // 移动端
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            window.onresize = window.onload = function () {
+                var container = document.getElementById('container');
+                container.style.height = '100%';
+            }
+        } else { // PC端
+            window.onresize = window.onload = function () {
+                var realHeight = document.documentElement.clientHeight;
+                var scale = realHeight / _HeightBase;
+                var container = document.getElementById('container');
+                container.style.transform = 'matrix(' + scale + ',0.0,0.0,' + scale + ',0,0)';
+                container.style.transformOrigin = '50% 0%';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <center>固定宽高比+px</center>
+        <center>640/1040</center>
+        <center>自动宽高比</center>
+    </div>
+</body>
+</html>
